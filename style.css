@@ -94,6 +94,7 @@ h1, h2, h3, h4 {
   text-wrap: balance;
 }
 .section-header h2 em { color: var(--gold); font-style: italic; }
+.section-note { margin-top: 0.9rem; font-size: 0.875rem; color: var(--muted-fg); }
 
 .hover-lift {
   transition: transform 0.6s var(--ease-smooth), box-shadow 0.6s var(--ease-smooth);
@@ -1032,6 +1033,30 @@ footer { background: var(--espresso); color: hsl(0 0% 100% / 0.65); padding-top:
   gap: 1.1rem;
   transform: translateY(-3rem);
 }
+
+/* --- Coming soon oznaka --- */
+.pl-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.05rem, 3.2vw, 1.35rem);
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 1.6rem;
+  animation: pl-fade-up 0.6s var(--ease-smooth) 0.05s both;
+}
+.pl-badge::before,
+.pl-badge::after {
+  content: '';
+  width: 1.75rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+  flex-shrink: 0;
+}
+.pl-badge::after { background: linear-gradient(90deg, var(--gold), transparent); }
 
 /* --- Logo mark (zub SVG kontejner) --- */
 .pl-logo-mark {
