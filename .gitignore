@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Radni/referentni materijali, nisu dio sitea
+images/tmp/
+
+# Lokalne Claude Code postavke (osobne, ne dijele se)
+.claude/settings.local.json
