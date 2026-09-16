@@ -242,20 +242,6 @@ const counterObs = new IntersectionObserver(entries => {
 document.querySelectorAll('[data-target]').forEach(el => counterObs.observe(el));
 
 /* ============================================================
-   HERO PARALLAX
-   ============================================================ */
-(function initParallax() {
-  const vid = document.querySelector('#hero video');
-  if (!vid) return;
-  const h = () => {
-    const s = window.scrollY;
-    if (s < window.innerHeight * 1.2)
-      vid.style.transform = `translateY(${s * 0.28}px)`;
-  };
-  window.addEventListener('scroll', h, { passive: true });
-})();
-
-/* ============================================================
    AKTIVNI NAV LINK (označava sekciju u kojoj se nalazi)
    ============================================================ */
 (function initActiveNav() {
