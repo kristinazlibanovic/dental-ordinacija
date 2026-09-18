@@ -42,6 +42,7 @@ body {
   line-height: 1.6;
 }
 img, video { display: block; max-width: 100%; }
+picture { display: contents; }
 a { text-decoration: none; color: inherit; }
 button { cursor: pointer; font-family: inherit; }
 ul { list-style: none; }
@@ -380,6 +381,7 @@ h1, h2, h3, h4 {
 .about-img-wrap { position: relative; }
 .about-img-wrap img {
   width: 100%;
+  height: auto;
   aspect-ratio: 4/5;
   object-fit: cover;
   box-shadow: var(--shadow-elegant);
@@ -765,29 +767,97 @@ h1, h2, h3, h4 {
    MAPA
    ============================================================ */
 #standort { background: var(--gradient-cream); padding: 5rem 0; }
-.map-header { text-align: center; margin-bottom: 2.75rem; }
+.map-header { text-align: center; margin-bottom: 3rem; }
 .map-header .eyebrow { justify-content: center; }
 .map-header h2 { font-size: 2.25rem; margin-top: 1rem; }
-.map-address {
-  color: var(--muted-fg);
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.3rem;
+.map-header .section-note {
+  max-width: 30rem;
+  margin-inline: auto;
+  margin-top: 1.1rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--gold-dark);
 }
-.map-address svg { color: hsl(340 44% 58%); flex-shrink: 0; }
+.map-header .ornament { display: flex; align-items: center; justify-content: center; gap: 0.7rem; margin-top: 1.6rem; }
+.map-header .ornament-line { width: 2.5rem; height: 1px; background: var(--border); }
+.map-header .ornament-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
 
-/* Okvir oko karte */
 .map-frame {
   position: relative;
+  max-width: 980px;
+  margin-inline: auto;
   box-shadow: 0 4px 24px hsl(0 0% 0% / 0.10);
+}
+
+/* Info traka ispod karte — lagana, bez teškog okvira */
+.standort-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 980px;
+  margin: 3.75rem auto 0;
+}
+.standort-card {
+  padding: 0.5rem 2rem;
+  text-align: center;
+  transition: transform 0.5s var(--ease-smooth);
+}
+.standort-card:not(:first-child) { border-left: 1px solid var(--border); }
+.standort-card:hover { transform: translateY(-3px); }
+.standort-card-icon { width: 1.9rem; height: 1.9rem; color: var(--gold); margin: 0 auto 1rem; }
+.standort-card-label {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold-dark);
+  margin-bottom: 0.55rem;
+}
+.standort-card-value { font-size: 0.9rem; color: var(--muted-fg); line-height: 1.6; }
+
+@media (max-width: 768px) {
+  .standort-cards { grid-template-columns: 1fr; max-width: 380px; gap: 1.5rem; }
+  .standort-card:not(:first-child) { border-left: none; border-top: 1px solid var(--border); padding-top: 1.75rem; }
+}
+
+/* Desktop: karta i kartice jedno pored drugog, kompaktnije */
+@media (min-width: 1000px) {
+  .standort-split {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    align-items: stretch;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .map-frame { max-width: none; margin: 0; }
+  .map-wrap { height: 100%; }
+  .map-wrap iframe { height: 100%; min-height: 480px; }
+
+  .standort-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: none;
+    margin: 0;
+  }
+  .standort-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.1rem;
+    text-align: left;
+    padding: 1.6rem 0;
+  }
+  .standort-card:not(:first-child) { border-left: none; border-top: 1px solid var(--border); }
+  .standort-card-icon { margin: 0.15rem 0 0; flex-shrink: 0; }
 }
 
 /* Iframe wrapper */
 .map-wrap { position: relative; overflow: hidden; }
-.map-wrap iframe { display: block; width: 100%; height: 460px; border: none; }
+.map-wrap iframe { display: block; width: 100%; height: 520px; border: none; }
 
 @media (max-width: 600px) {
   .map-wrap iframe { height: 420px; }
@@ -971,6 +1041,7 @@ footer { background: var(--espresso); color: hsl(0 0% 100% / 0.65); padding-top:
 
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
   .about-img-wrap::after { display: none; }
+  .aic-title { white-space: nowrap; }
 
   .team-grid { grid-template-columns: 1fr 1fr; }
 
@@ -1399,6 +1470,7 @@ footer { background: var(--espresso); color: hsl(0 0% 100% / 0.65); padding-top:
 @media (max-width: 900px) {
   .services-split { grid-template-columns: 1fr; }
   .services-photo { min-height: 320px; aspect-ratio: 16/8; }
+  .services-photo img { object-position: center bottom; }
   .services-grid-2col .service-card { border-left: none; }
 }
 @media (max-width: 520px) {

@@ -28,3 +28,9 @@ images/tmp/
 
 # Lokalne Claude Code postavke (osobne, ne dijele se)
 .claude/settings.local.json
+
+# Povjerljive vanjske ponude, nisu dio sitea
+PONUDE ZA SEO ADS I MARKETING/
+
+# Testni/radni fajlovi
+tmp/
