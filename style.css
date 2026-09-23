@@ -672,6 +672,49 @@ h1, h2, h3, h4 {
 .closed { color: hsl(0 0% 100% / 0.35) !important; font-style: italic; }
 
 /* ============================================================
+   TERMINBUCHUNG
+   ============================================================ */
+#terminbuchung { padding: 7rem 0; }
+
+.tb-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-elegant);
+  padding: clamp(2rem, 4vw, 3.5rem);
+  position: relative;
+  overflow: hidden;
+}
+.tb-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gradient-gold);
+}
+
+.tb-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 2.75rem;
+}
+.tb-step-icon { width: 1.9rem; height: 1.9rem; color: var(--gold); margin-bottom: 1rem; }
+.tb-step-label { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 0.4rem; }
+.tb-step-text { font-size: 0.85rem; line-height: 1.65; color: var(--muted-fg); }
+
+.tb-cta-wrap { text-align: center; padding-top: 2rem; border-top: 1px solid var(--border); }
+.tb-cta { display: inline-flex; align-items: center; gap: 0.6rem; }
+.tb-cta-icon { width: 1rem; height: 1rem; flex-shrink: 0; }
+
+@media (max-width: 768px) {
+  .tb-steps { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+  .tb-step-icon { margin-inline: auto; }
+  .tb-cta { width: 100%; }
+}
+
+/* ============================================================
    KONTAKT
    ============================================================ */
 #kontakt { padding: 7rem 0; background: var(--cream); }
@@ -1489,6 +1532,7 @@ footer { background: var(--espresso); color: hsl(0 0% 100% / 0.65); padding-top:
 #leistungen      { background: var(--cream-b); }
 #galerie         { background: var(--cream);   }
 #oeffnungszeiten { background: var(--espresso); }
+#terminbuchung   { background: var(--cream);   }
 #kontakt         { background: var(--cream-b); }
 #standort        { background: var(--cream); padding: 4.5rem 0; }
 footer           { background: var(--espresso); }
