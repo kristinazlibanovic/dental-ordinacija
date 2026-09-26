@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zahnaesthetika – Zahnarzt in Salzburg | Dr. Kristina Havaić Žlibanović</title>
-  <meta name="description" content="Zahnarztpraxis in Salzburg-Nonntal: Dr. Kristina Havaić Žlibanović. Ästhetische Zahnmedizin, Implantologie, Parodontologie, Zahnersatz u. v. m. Termin vereinbaren." />
+  <meta name="description" content="Zahnarztpraxis in Salzburg-Nonntal: Dr. Kristina Havaić Žlibanović. Ästhetische Zahnmedizin (Veneers, Bleaching), Implantologie, Parodontologie, Zahnersatz u. v. m. Termin vereinbaren." />
   <meta name="author" content="Zahnordination Zahnaesthetika" />
   <link rel="canonical" href="https://zahnaesthetika.at/" />
 
@@ -64,6 +64,21 @@
     }
   }
   </script>
+
+  <script>
+    /* Preloader samo pri prvom posjetu u sesiji i ne kod "reduced motion" */
+    try {
+      if (sessionStorage.getItem('pl-seen') || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('pl-skip');
+      }
+    } catch (e) {}
+  </script>
+  <noscript>
+    <style>
+      #preloader { display: none; }
+      .reveal, .stagger > * { opacity: 1; transform: none; }
+    </style>
+  </noscript>
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -265,7 +280,7 @@
         </picture>
         <div class="services-photo-caption">
           <p class="eyebrow">Alles aus einer Hand</p>
-          <p>Modernste Technologie für Ihr Lächeln.</p>
+          <p>Moderne Technologie für Ihr Lächeln.</p>
         </div>
       </div>
 
@@ -316,7 +331,7 @@
             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
           </svg>
           <h3>Ästhetische Zahnmedizin</h3>
-          <p>Smile Design, Veneers, Bleaching und ICON für Ihr Traumlächeln durch modernste ästhetische Behandlungen.</p>
+          <p>Smile Design, Veneers, Bleaching und ICON für Ihr Traumlächeln durch moderne ästhetische Behandlungen.</p>
         </div>
 
         <div class="service-card">
@@ -350,7 +365,7 @@
             <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
           </svg>
           <h3>Zahnaufhellung</h3>
-          <p>Professionelle, schonende Aufhellung reduziert Verfärbungen für ein strahlendes, natürliches Lächeln.</p>
+          <p>Professionelles Bleaching: schonende Aufhellung reduziert Verfärbungen für ein strahlendes, natürliches Lächeln.</p>
         </div>
 
       </div>

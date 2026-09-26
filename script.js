@@ -183,12 +183,17 @@ const cookieBanner  = document.getElementById('cookie-banner');
 const cookieAccept  = document.getElementById('cookie-accept');
 const cookieReject  = document.getElementById('cookie-reject');
 
-if (!localStorage.getItem('cookie-consent')) {
+/* localStorage može baciti grešku (blokirani kolačići/privatni način) — ne smije srušiti ostatak skripte */
+function getConsent() {
+  try { return localStorage.getItem('cookie-consent'); } catch (e) { return null; }
+}
+
+if (!getConsent()) {
   setTimeout(() => cookieBanner.classList.add('show'), 1800);
 }
 
 function dismissCookie(value) {
-  localStorage.setItem('cookie-consent', value);
+  try { localStorage.setItem('cookie-consent', value); } catch (e) { /* nije moguće spremiti — banner se samo zatvori */ }
   cookieBanner.classList.remove('show');
 }
 
@@ -204,8 +209,15 @@ const hidePreloader = () => {
     preloader.classList.add('hide');
   }
 };
-document.addEventListener('DOMContentLoaded', () => setTimeout(hidePreloader, 2100));
-setTimeout(hidePreloader, 5000);
+/* Preloader se prikazuje samo pri prvom otvaranju stranice u sesiji (skraćen);
+   pri ponovnom učitavanju ga inline skripta u <head> preskače (klasa pl-skip). */
+try { sessionStorage.setItem('pl-seen', '1'); } catch (e) {}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => setTimeout(hidePreloader, 1200));
+} else {
+  setTimeout(hidePreloader, 1200);
+}
+setTimeout(hidePreloader, 3000);
 
 
 /* ============================================================
