@@ -34,3 +34,14 @@ PONUDE ZA SEO ADS I MARKETING/
 
 # Testni/radni fajlovi
 tmp/
+
+# Izvorni materijali za podstranice (tekstovi, screenshotovi, originalne fotografije) — nisu dio sitea
+podstranice/
+
+# Pravila komore (PDF, samo za referencu) — nisu dio sitea
+pravila/
+
+# Stari logotipi koje stranica ne koristi — ostaju lokalno (npr. za Google Business Profile), ne idu na web
+images/logo/logo-gbp-upload-color.png
+images/logo/logo-image.png
+images/logo/logo-image-svg.svg

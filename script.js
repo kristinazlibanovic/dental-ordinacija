@@ -2,6 +2,19 @@
    script.js — Zahnordination Zahnaesthetika, Salzburg
    ============================================================ */
 
+/* --- Lokalni pregled (stranica otvorena izravno s diska, file://) ---
+   Preglednik tada ne otvara index.html iz mape sam od sebe (kao Netlify), nego prikaže
+   popis datoteka — zato linkovima na mape (npr. "parodontologie/", "../#leistungen")
+   dodaj "index.html". Na webu se ništa ne mijenja. */
+if (location.protocol === 'file:') {
+  document.querySelectorAll('a[href]').forEach(a => {
+    const href = a.getAttribute('href');
+    if (/^([a-z]+:|#|\/\/)/i.test(href)) return;
+    const [path, hash] = href.split('#');
+    if (path.endsWith('/')) a.setAttribute('href', `${path}index.html${hash !== undefined ? '#' + hash : ''}`);
+  });
+}
+
 /* --- Navbar scroll efekt + scroll-to-top gumb --- */
 const navbar     = document.getElementById('navbar');
 const scrollTop  = document.getElementById('scroll-top');
@@ -39,29 +52,40 @@ document.querySelectorAll('.hours-row').forEach(row => {
   }
 });
 
-/* --- Galerija lightbox --- */
+/* --- Galerija lightbox (samo na početnoj stranici) --- */
 const lightbox      = document.getElementById('lightbox');
 const lightboxImg   = document.getElementById('lightbox-img');
 const lightboxClose = document.getElementById('lightbox-close');
 
-document.querySelectorAll('.gallery-item').forEach(item => {
-  item.addEventListener('click', () => {
-    const img = item.querySelector('img');
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
+if (lightbox) {
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const img = item.querySelector('img');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
   });
-});
 
-function closeLightbox() {
-  lightbox.classList.remove('open');
-  document.body.style.overflow = '';
+  const closeLightbox = () => {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 }
 
-lightboxClose.addEventListener('click', closeLightbox);
-lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+/* --- Klikabilne kartice usluga: ružičasto svjetlo prati pokazivač --- */
+document.querySelectorAll('.service-card--link').forEach(card => {
+  card.addEventListener('pointermove', e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+    card.style.setProperty('--my', `${e.clientY - r.top}px`);
+  });
+});
 
 /* --- Toast notifikacije --- */
 function showToast(message, type = 'success') {
@@ -148,6 +172,9 @@ if (contactForm) {
       const data = await res.json();
 
       if (data.success) {
+        /* Signal za Google Tag Manager (konverzija "kontakt forma poslana") — GTM ga obradi samo uz pristanak */
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'contact_form_submit' });
         showToast('Vielen Dank! Wir melden uns so bald wie möglich.');
         contactForm.reset();
         contactForm.querySelectorAll('.has-error').forEach(el => el.classList.remove('has-error'));
@@ -197,8 +224,58 @@ function dismissCookie(value) {
   cookieBanner.classList.remove('show');
 }
 
-cookieAccept.addEventListener('click', () => dismissCookie('all'));
-cookieReject.addEventListener('click', () => dismissCookie('essential'));
+/* "Alle akzeptieren": tek sada se pokreće Google Tag Manager (window.grantConsent je u <head>) */
+cookieAccept.addEventListener('click', () => {
+  dismissCookie('all');
+  if (window.grantConsent) window.grantConsent();
+});
+
+/* "Nur notwendige" (i povlačenje ranijeg pristanka): Consent Mode → denied, Google kolačići se brišu */
+cookieReject.addEventListener('click', () => {
+  dismissCookie('essential');
+  if (window.gtag) {
+    gtag('consent', 'update', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+  }
+  const domains = ['', location.hostname, '.' + location.hostname.replace(/^www\./, '')];
+  document.cookie.split(';')
+    .map(c => c.split('=')[0].trim())
+    .filter(name => /^(_ga|_gid|_gat|_gcl_)/.test(name))
+    .forEach(name => domains.forEach(d => {
+      document.cookie = `${name}=; Max-Age=0; path=/${d ? '; domain=' + d : ''}`;
+    }));
+});
+
+/* "Cookie-Einstellungen" u footeru — ponovno otvara banner (promjena ili povlačenje pristanka) */
+document.querySelectorAll('.cookie-settings').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    cookieBanner.classList.add('show');
+  });
+});
+
+/* --- Google Maps: karta se učitava tek nakon klika (do tada se ništa ne šalje Googleu) --- */
+const mapConsent = document.getElementById('map-consent');
+if (mapConsent) {
+  const loadMap = () => mapConsent.replaceWith(document.getElementById('map-template').content.cloneNode(true));
+  let mapRemembered = false;
+  try { mapRemembered = localStorage.getItem('maps-consent') === '1'; } catch (e) {}
+
+  if (mapRemembered) {
+    loadMap();
+  } else {
+    document.getElementById('map-load').addEventListener('click', () => {
+      if (document.getElementById('map-remember').checked) {
+        try { localStorage.setItem('maps-consent', '1'); } catch (e) { /* nije moguće spremiti — karta se ipak učita */ }
+      }
+      loadMap();
+    });
+  }
+}
 
 /* ============================================================
    PRELOADER
@@ -258,7 +335,8 @@ document.querySelectorAll('[data-target]').forEach(el => counterObs.observe(el))
    ============================================================ */
 (function initActiveNav() {
   const sections = document.querySelectorAll('section[id]');
-  const anchors  = document.querySelectorAll('.nav-links a');
+  /* Samo linkovi na sekcije iste stranice — na podstranicama je "Leistungen" trajno označen */
+  const anchors  = document.querySelectorAll('.nav-links a[href^="#"]');
   if (!anchors.length) return;
 
   const obs = new IntersectionObserver(entries => {
@@ -282,6 +360,8 @@ const staggerObs = new IntersectionObserver(entries => {
     if (e.isIntersecting) {
       e.target.classList.add('in');
       staggerObs.unobserve(e.target);
+      /* Nakon ulazne animacije makni kašnjenja, da hover na karticama reagira odmah */
+      setTimeout(() => e.target.classList.add('stagger-done'), 1100);
     }
   });
 }, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
@@ -335,4 +415,8 @@ document.addEventListener('keydown', e => {
     document.querySelectorAll('.legal-modal.open').forEach(m => closeLegalModal(m));
   }
 });
+
+/* Podstranice usluga linkaju na /#impressum, /#datenschutz, /#cookie — otvori odgovarajući modal */
+const legalHash = location.hash.slice(1);
+if (['impressum', 'datenschutz', 'cookie'].includes(legalHash)) openLegalModal(legalHash);
 

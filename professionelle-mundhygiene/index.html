@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Consent Mode v2 — bez pristanka je sve odbijeno (DSGVO / TKG 2021) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+  </script>
+  <!-- Google Tag Manager — type="text/plain": pokreće se tek nakon pristanka u cookie banneru ("Alle akzeptieren") -->
+  <script type="text/plain" data-consent="marketing">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5CMWS475');</script>
+  <!-- End Google Tag Manager -->
+  <script>
+    /* Pristanak: Consent Mode → granted i pokretanje GTM-a.
+       Poziva se odmah ovdje (ako je posjetitelj već ranije prihvatio) i iz script.js (klik "Alle akzeptieren"). */
+    window.grantConsent = function () {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
+      document.querySelectorAll('script[type="text/plain"][data-consent]').forEach(function (blocked) {
+        var s = document.createElement('script');
+        s.text = blocked.text;
+        blocked.parentNode.replaceChild(s, blocked);
+      });
+    };
+    try { if (localStorage.getItem('cookie-consent') === 'all') window.grantConsent(); } catch (e) {}
+  </script>
+  <title>Professionelle Mundhygiene in Salzburg | Zahnaesthetika</title>
+  <meta name="description" content="Professionelle Mundhygiene in Salzburg-Nonntal: gründliche Entfernung von Zahnstein und Belägen, in der Regel zweimal jährlich empfohlen." />
+  <meta name="author" content="Zahnordination Zahnaesthetika" />
+  <link rel="canonical" href="https://zahnaesthetika.at/professionelle-mundhygiene/" />
+
+  <meta property="og:title"       content="Professionelle Mundhygiene in Salzburg | Zahnaesthetika" />
+  <meta property="og:description" content="Professionelle Mundhygiene in Salzburg-Nonntal: gründliche Entfernung von Zahnstein und Belägen, in der Regel zweimal jährlich empfohlen." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://zahnaesthetika.at/professionelle-mundhygiene/" />
+  <meta property="og:image"       content="https://zahnaesthetika.at/images/leistungen/mundhygiene-behandlungsplatz-1400.jpg" />
+  <meta property="og:locale"      content="de_AT" />
+  <meta name="twitter:card"       content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/logo/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Startseite","item":"https://zahnaesthetika.at/"},
+      {"@type":"ListItem","position":2,"name":"Professionelle Mundhygiene","item":"https://zahnaesthetika.at/professionelle-mundhygiene/"}
+    ]
+  }
+  </script>
+
+  <noscript>
+    <style>
+      .reveal, .stagger > * { opacity: 1; transform: none; }
+    </style>
+  </noscript>
+
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CMWS475"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- NAVBAR -->
+<header id="navbar">
+  <div class="container navbar-inner">
+
+    <a href="../" class="logo" aria-label="Zahnaesthetika – zur Startseite">
+      <img src="../images/logo/svg2.svg" alt="" class="logo-svg" aria-hidden="true" />
+      <span class="logo-text"><span class="logo-initial">Z</span>ahnaesthetika</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="../#ueber-uns">Über uns</a>
+      <a href="../#leistungen" class="active">Leistungen</a>
+      <a href="../#galerie">Galerie</a>
+      <a href="../#kontakt">Kontakt</a>
+      <a href="../#standort">Standort</a>
+    </nav>
+
+    <a href="#termin" class="nav-cta">Termin buchen</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="container">
+      <nav aria-label="Mobile Navigation">
+        <a href="../">Startseite</a>
+        <a href="../#ueber-uns">Über uns</a>
+        <a href="../#leistungen">Leistungen</a>
+        <a href="../#galerie">Galerie</a>
+        <a href="../#kontakt">Kontakt</a>
+        <a href="../#standort">Standort</a>
+        <a href="#termin" style="color:var(--gold);font-weight:500">&#8594; Termin buchen</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="lp-hero">
+  <div class="container lp-hero-grid">
+    <div class="lp-hero-text">
+      <nav aria-label="Brotkrümelnavigation">
+        <ol class="lp-crumbs">
+          <li><a href="../">Startseite</a></li>
+          <li><a href="../#leistungen">Leistungen</a></li>
+          <li aria-current="page">Professionelle Mundhygiene</li>
+        </ol>
+      </nav>
+      <p class="eyebrow">Prophylaxe · Salzburg</p>
+      <h1>Professionelle <em>Mundhygiene</em></h1>
+      <p class="lp-lead">Eine gründliche tägliche Mundhygiene ist die wichtigste Grundlage für gesunde Zähne und gesundes Zahnfleisch.</p>
+      <div class="hero-btns">
+        <a href="#termin" class="btn-primary">Termin buchen</a>
+        <a href="tel:+436606341421" class="btn-outline"><svg class="lp-tel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg> +43&nbsp;660&nbsp;634&nbsp;1421</a>
+      </div>
+    </div>
+    <div class="lp-visual">
+      <picture>
+        <source type="image/webp" srcset="../images/leistungen/mundhygiene-behandlungsplatz-800.webp 800w, ../images/leistungen/mundhygiene-behandlungsplatz-1400.webp 1400w" sizes="(max-width: 960px) 92vw, 400px" />
+        <img src="../images/leistungen/mundhygiene-behandlungsplatz-1400.jpg" srcset="../images/leistungen/mundhygiene-behandlungsplatz-800.jpg 800w, ../images/leistungen/mundhygiene-behandlungsplatz-1400.jpg 1400w" sizes="(max-width: 960px) 92vw, 400px" alt="Behandlungsplatz für die professionelle Mundhygiene in der Praxis Zahnaesthetika" width="1400" height="1867" fetchpriority="high" />
+      </picture>
+      <p class="lp-badge"><strong>2× jährlich</strong><span>empfohlen</span></p>
+    </div>
+  </div>
+</section>
+
+
+<!-- SADRŽAJ -->
+<section class="lp-main">
+  <div class="container lp-layout">
+
+    <article class="lp-article">
+      <p class="lp-intro">Dennoch lassen sich weiche und harte Zahnbeläge, insbesondere in den Zahnzwischenräumen, mit der täglichen Zahnpflege nicht immer vollständig entfernen.</p>
+      <p>Im stressigen Alltag, nach einem langen Arbeitstag oder zwischen all den täglichen Verpflichtungen kommt die Reinigung der Zahnzwischenräume mit Zahnseide oder Interdentalbürstchen häufig zu kurz.</p>
+
+      <h2>Unsere Empfehlung: <em>zweimal jährlich</em></h2>
+      <p>Aus diesem Grund empfehlen wir eine professionelle Mundhygiene und die Entfernung von Zahnstein in der Regel zweimal jährlich. Dabei werden hartnäckige Beläge gründlich entfernt und schwer erreichbare Bereiche sorgfältig gereinigt.</p>
+      <div class="lp-points stagger">
+        <div class="lp-point">
+          <div class="lp-point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><path d="M12 3l1.8 4.7 4.7 1.8-4.7 1.8L12 16l-1.8-4.7-4.7-1.8 4.7-1.8z"/><path d="M18.5 15l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg></div>
+          <h3>Gründliche Reinigung</h3>
+          <p>Weiche und harte Beläge sowie Zahnstein werden gründlich entfernt.</p>
+        </div>
+        <div class="lp-point">
+          <div class="lp-point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div>
+          <h3>Zahnzwischenräume</h3>
+          <p>Auch schwer erreichbare Bereiche werden sorgfältig gereinigt.</p>
+        </div>
+        <div class="lp-point">
+          <div class="lp-point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><path d="M9 18h6M10 21.5h4"/><path d="M12 2.5a6.5 6.5 0 0 0-3.9 11.7c.6.5.9 1.2.9 2V17h6v-.8c0-.8.3-1.5.9-2A6.5 6.5 0 0 0 12 2.5z"/></svg></div>
+          <h3>Tipps &amp; Tricks</h3>
+          <p>Gemeinsam überprüfen wir Ihre tägliche Zahnpflege-Routine.</p>
+        </div>
+      </div>
+
+      <h2>Mehr als <em>saubere Zähne</em></h2>
+      <p>Gleichzeitig bietet die professionelle Mundhygiene die Möglichkeit, die eigene Zahnpflege-Routine zu überprüfen und sich wieder an kleine, aber wichtige Tipps und Tricks zu erinnern. Denn oft sind es gerade diese kleinen Schritte, die langfristig dazu beitragen, Zähne und Zahnfleisch gesund zu erhalten.</p>
+      <figure class="lp-figure reveal">
+        <picture>
+          <source type="image/webp" srcset="../images/leistungen/mundhygiene-ausstattung-800.webp 800w, ../images/leistungen/mundhygiene-ausstattung-1400.webp 1400w" sizes="(max-width: 1100px) 92vw, 736px" />
+          <img class="lp-figure-img--mh" src="../images/leistungen/mundhygiene-ausstattung-1400.jpg" srcset="../images/leistungen/mundhygiene-ausstattung-800.jpg 800w, ../images/leistungen/mundhygiene-ausstattung-1400.jpg 1400w" sizes="(max-width: 1100px) 92vw, 736px" alt="Behandlungseinheit für die professionelle Mundhygiene in der Praxis Zahnaesthetika" width="1400" height="1867" loading="lazy" />
+        </picture>
+        <figcaption>Unser Behandlungsplatz für die professionelle Mundhygiene.</figcaption>
+      </figure>
+    </article>
+
+    <aside class="lp-aside" aria-label="Termin vereinbaren">
+      <div class="lp-aside-card">
+        <p class="eyebrow">Terminbuchung</p>
+        <p class="lp-aside-title">Termin vereinbaren</p>
+        <p class="lp-aside-text">Online rund um die Uhr oder telefonisch während unserer Öffnungszeiten.</p>
+        <a href="https://termine.softdent.at/zahnaesthetika" target="_blank" rel="noopener" class="btn-primary" aria-label="Online Termin buchen (öffnet in neuem Tab)">Online Termin buchen <svg class="tb-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <a href="tel:+436606341421" class="lp-aside-tel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg> +43&nbsp;660&nbsp;634&nbsp;1421</a>
+        <dl class="lp-aside-hours">
+          <div><dt>Mo &amp; Mi</dt><dd>14:30 – 19:30</dd></div>
+          <div><dt>Di, Do &amp; Fr</dt><dd>08:00 – 14:00</dd></div>
+          <div><dt>Sa &amp; So</dt><dd>Geschlossen</dd></div>
+        </dl>
+        <p class="lp-aside-addr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Nonntaler Hauptstraße 49, 5020 Salzburg</p>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+
+<!-- TERMIN -->
+<section class="lp-cta" id="termin">
+  <div class="container reveal">
+    <p class="eyebrow">Terminbuchung</p>
+    <h2>Ihr Termin für die <em>professionelle Mundhygiene</em></h2>
+    <p>Buchen Sie Ihren Termin bequem online oder rufen Sie uns an – wir freuen uns auf Ihren Besuch.</p>
+    <div class="hero-btns">
+      <a href="https://termine.softdent.at/zahnaesthetika" target="_blank" rel="noopener" class="btn-primary tb-cta" aria-label="Jetzt online Termin buchen (öffnet in neuem Tab)">
+        Jetzt online Termin buchen
+        <svg class="tb-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
+      <a href="tel:+436606341421" class="btn-outline"><svg class="lp-tel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg> +43&nbsp;660&nbsp;634&nbsp;1421</a>
+    </div>
+    <p class="lp-cta-addr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Zahnaesthetika · Nonntaler Hauptstraße 49, 5020 Salzburg</p>
+  </div>
+</section>
+
+
+<!-- WEITERE LEISTUNGEN -->
+<section class="lp-more">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="eyebrow">Leistungen</p>
+      <h2>Weitere <em>Leistungen</em></h2>
+    </div>
+    <div class="lp-more-grid stagger">
+      <a href="../radiologische-diagnostik/" class="service-card service-card--link">
+        <span class="service-icon-wrap"><svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+        <h3>Radiologische Diagnostik</h3>
+        <p>Digitales Röntgen und dreidimensionale DVT-Diagnostik für eine präzise Behandlungsplanung.</p>
+        <span class="service-more">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="service-corner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </a>
+      <a href="../parodontologie/" class="service-card service-card--link">
+        <span class="service-icon-wrap"><svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" aria-hidden="true"><path d="M17 8c0 0-7-6-13-4C2 12 6 17 8 19c3 3 6 3 6 3s-1-4 3-8"/><path d="M4 4l14 14"/></svg></span>
+        <h3>Parodontologie</h3>
+        <p>Parodontitis früh erkennen, gezielt behandeln und die eigenen Zähne möglichst langfristig erhalten.</p>
+        <span class="service-more">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="service-corner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </a>
+      <a href="../implantologie/" class="service-card service-card--link">
+        <span class="service-icon-wrap"><svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg></span>
+        <h3>Implantologie &amp; Chirurgie</h3>
+        <p>Zahnimplantate als Ersatz für fehlende Zähne sowie zahnärztliche Chirurgie.</p>
+        <span class="service-more">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="service-corner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </a>
+      <a href="../aesthetische-zahnmedizin/" class="service-card service-card--link">
+        <span class="service-icon-wrap"><svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+        <h3>Ästhetische Zahnmedizin</h3>
+        <p>Veneers, Zahnaufhellung und ästhetische Behandlungen nach individueller Planung.</p>
+        <span class="service-more">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="service-corner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </a>
+    </div>
+    <p class="lp-more-all"><a href="../#leistungen" class="lp-link-arrow">Alle Leistungen ansehen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+  </div>
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="../" class="logo logo--light">
+          <img src="../images/logo/svg2.svg" alt="" class="logo-svg" aria-hidden="true" />
+          <span class="logo-text"><span class="logo-initial">Z</span>ahnaesthetika</span>
+        </a>
+        <p>Ihre moderne Zahnarztpraxis in Salzburg, wo Zahnmedizin auf Kunst trifft. Unser Ziel: Ihr Lächeln in guten Händen.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/zahnaesthetika" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61593370141613" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li>Nonntaler Hauptstraße 49</li>
+          <li>5020 Salzburg, Österreich</li>
+          <li>Tel: <a href="tel:+436606341421">+43&nbsp;660&nbsp;634&nbsp;1421</a></li>
+          <li>E-Mail: info@zahnaesthetika.at</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="../#datenschutz">Datenschutzerklärung</a></li>
+          <li><a href="../#impressum">Impressum</a></li>
+          <li><a href="../#cookie">Cookie-Richtlinie</a></li>
+          <li><a href="#" class="cookie-settings">Cookie-Einstellungen</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div>&#169; <span id="year"></span> Zahnordination Zahnaesthetika. Alle Rechte vorbehalten.</div>
+      <div>Nonntaler Hauptstraße 49, 5020 Salzburg, Österreich</div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- SCROLL TO TOP -->
+<button id="scroll-top" aria-label="Zurück nach oben">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" role="dialog" aria-label="Cookie-Hinweis">
+  <p>
+    Mit Ihrer Einwilligung nutzen wir Google Analytics und Google Ads, um die Nutzung unserer Website zu analysieren und unsere Werbung zu messen und zu verbessern. Dabei werden Daten an Google übertragen. Ihre Auswahl können Sie jederzeit unter „Cookie&#8209;Einstellungen“ ändern.
+    Mehr in unserer <a href="../#datenschutz">Datenschutzerklärung</a>.
+  </p>
+  <div class="cookie-btns">
+    <button class="cookie-accept" id="cookie-accept">Alle akzeptieren</button>
+    <button class="cookie-reject" id="cookie-reject">Nur notwendige</button>
+  </div>
+</div>
+
+
+<script src="../script.js"></script>
+</body>
+</html>
