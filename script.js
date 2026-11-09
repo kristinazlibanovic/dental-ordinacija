@@ -52,30 +52,88 @@ document.querySelectorAll('.hours-row').forEach(row => {
   }
 });
 
-/* --- Galerija lightbox (samo na početnoj stranici) --- */
+/* --- Galerija lightbox (samo na početnoj stranici) ---
+   Strelice, tipke ←/→, povlačenje prstom; veća slika iz data-full; fokus ostaje u lightboxu */
 const lightbox      = document.getElementById('lightbox');
 const lightboxImg   = document.getElementById('lightbox-img');
 const lightboxClose = document.getElementById('lightbox-close');
 
 if (lightbox) {
-  document.querySelectorAll('.gallery-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const img = item.querySelector('img');
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightbox.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    });
-  });
+  const items     = [...document.querySelectorAll('.gallery-item')];
+  const caption   = document.getElementById('lightbox-caption');
+  const counter   = document.getElementById('lightbox-count');
+  const prevBtn   = document.getElementById('lightbox-prev');
+  const nextBtn   = document.getElementById('lightbox-next');
+  const focusable = [lightboxClose, prevBtn, nextBtn];
+  let current = 0;
+  let opener  = null;
 
-  const closeLightbox = () => {
-    lightbox.classList.remove('open');
-    document.body.style.overflow = '';
+  const preload = i => { new Image().src = items[(i + items.length) % items.length].dataset.full; };
+  const loaded  = () => lightboxImg.classList.remove('is-loading');
+  lightboxImg.addEventListener('load', loaded);
+  lightboxImg.addEventListener('error', loaded);
+
+  const show = i => {
+    current = (i + items.length) % items.length;
+    const item = items[current];
+    const img  = item.querySelector('img');
+    const src  = item.dataset.full || img.currentSrc || img.src;
+    /* Ista slika ponovno: load se ne okida, zato samo kod promjene */
+    if (lightboxImg.getAttribute('src') !== src) {
+      lightboxImg.classList.add('is-loading');
+      lightboxImg.src = src;
+    }
+    lightboxImg.alt = img.alt;
+    caption.textContent = item.querySelector('.gallery-overlay span').textContent;
+    counter.textContent = `${current + 1} / ${items.length}`;
+    preload(current + 1);
+    preload(current - 1);
   };
 
+  const openLightbox = i => {
+    opener = items[i];
+    show(i);
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lightboxClose.focus();
+  };
+
+  const closeLightbox = () => {
+    if (!lightbox.classList.contains('open')) return;
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    if (opener) opener.focus();
+  };
+
+  items.forEach((item, i) => item.addEventListener('click', () => openLightbox(i)));
+  prevBtn.addEventListener('click', () => show(current - 1));
+  nextBtn.addEventListener('click', () => show(current + 1));
   lightboxClose.addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-figure')) closeLightbox();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    else if (e.key === 'ArrowLeft') show(current - 1);
+    else if (e.key === 'ArrowRight') show(current + 1);
+    else if (e.key === 'Tab') {
+      e.preventDefault();
+      const pos = focusable.indexOf(document.activeElement);
+      focusable[(pos + (e.shiftKey ? -1 : 1) + focusable.length) % focusable.length].focus();
+    }
+  });
+
+  /* Povlačenje prstom lijevo/desno */
+  let touchX = null;
+  lightbox.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+  lightbox.addEventListener('touchend', e => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
+    touchX = null;
+  });
 }
 
 /* --- Klikabilne kartice usluga: ružičasto svjetlo prati pokazivač --- */

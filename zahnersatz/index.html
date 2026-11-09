@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Consent Mode v2 — bez pristanka je sve odbijeno (DSGVO / TKG 2021) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+  </script>
+  <!-- Google Tag Manager — type="text/plain": pokreće se tek nakon pristanka u cookie banneru ("Alle akzeptieren") -->
+  <script type="text/plain" data-consent="marketing">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5CMWS475');</script>
+  <!-- End Google Tag Manager -->
+  <script>
+    /* Pristanak: Consent Mode → granted i pokretanje GTM-a.
+       Poziva se odmah ovdje (ako je posjetitelj već ranije prihvatio) i iz script.js (klik "Alle akzeptieren"). */
+    window.grantConsent = function () {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
+      document.querySelectorAll('script[type="text/plain"][data-consent]').forEach(function (blocked) {
+        var s = document.createElement('script');
+        s.text = blocked.text;
+        blocked.parentNode.replaceChild(s, blocked);
+      });
+    };
+    try { if (localStorage.getItem('cookie-consent') === 'all') window.grantConsent(); } catch (e) {}
+  </script>
+  <title>Zahnersatz &amp; Prothetik in Salzburg | Zahnaesthetika</title>
+  <meta name="description" content="Zahnersatz in Salzburg: Veneers, Kronen, Brücken und Prothesen – individuell in Zusammenarbeit mit dem Zahntechniker angefertigt. Persönliche Beratung." />
+  <meta name="author" content="Zahnordination Zahnaesthetika" />
+  <link rel="canonical" href="https://zahnaesthetika.at/zahnersatz/" />
+
+  <meta property="og:title"       content="Zahnersatz &amp; Prothetik in Salzburg | Zahnaesthetika" />
+  <meta property="og:description" content="Zahnersatz in Salzburg: Veneers, Kronen, Brücken und Prothesen – individuell in Zusammenarbeit mit dem Zahntechniker angefertigt. Persönliche Beratung." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://zahnaesthetika.at/zahnersatz/" />
+  <meta property="og:image"       content="https://zahnaesthetika.at/images/fotoshooting/og-zahnaesthetika.jpg" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale"      content="de_AT" />
+  <meta name="twitter:card"       content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/logo/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/logo/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Startseite","item":"https://zahnaesthetika.at/"},
+      {"@type":"ListItem","position":2,"name":"Zahnersatz","item":"https://zahnaesthetika.at/zahnersatz/"}
+    ]
+  }
+  </script>
+
+  <noscript>
+    <style>
+      .reveal, .stagger > * { opacity: 1; transform: none; }
+    </style>
+  </noscript>
+
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CMWS475"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- NAVBAR -->
+<header id="navbar">
+  <div class="container navbar-inner">
+
+    <a href="../" class="logo" aria-label="Zahnaesthetika – zur Startseite">
+      <img src="../images/logo/svg2.svg" alt="" class="logo-svg" aria-hidden="true" />
+      <span class="logo-text"><span class="logo-initial">Z</span>ahnaesthetika</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="../#ueber-uns">Über uns</a>
+      <a href="../#leistungen" class="active">Leistungen</a>
+      <a href="../#galerie">Galerie</a>
+      <a href="../#kontakt">Kontakt</a>
+      <a href="../#standort">Standort</a>
+    </nav>
+
+    <a href="#termin" class="nav-cta">Termin buchen</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="container">
+      <nav aria-label="Mobile Navigation">
+        <a href="../">Startseite</a>
+        <a href="../#ueber-uns">Über uns</a>
+        <a href="../#leistungen">Leistungen</a>
+        <a href="../#galerie">Galerie</a>
+        <a href="../#kontakt">Kontakt</a>
+        <a href="../#standort">Standort</a>
+        <a href="#termin" style="color:var(--gold);font-weight:500">&#8594; Termin buchen</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="lp-hero">
+  <div class="container lp-hero-grid">
+    <div class="lp-hero-text">
+      <nav aria-label="Brotkrümelnavigation">
+        <ol class="lp-crumbs">
+          <li><a href="../">Startseite</a></li>
+          <li><a href="../#leistungen">Leistungen</a></li>
+          <li aria-current="page">Zahnersatz</li>
+        </ol>
+      </nav>
+      <p class="eyebrow">Prothetik · Salzburg</p>
+      <h1>Zahnersatz in <em>Salzburg</em></h1>
+      <p class="lp-lead">Individuell angefertigt – für Funktion und Ästhetik.</p>
+      <div class="hero-btns">
+        <a href="#termin" class="btn-primary">Termin buchen</a>
+        <a href="tel:+436606341421" class="btn-outline"><svg class="lp-tel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg> +43&nbsp;660&nbsp;634&nbsp;1421</a>
+      </div>
+    </div>
+    <div class="lp-emblem" aria-hidden="true">
+      <span class="lp-emblem-ring lp-emblem-ring--outer"></span>
+      <span class="lp-emblem-ring lp-emblem-ring--dash"></span>
+      <span class="lp-emblem-core"></span>
+      <svg class="lp-emblem-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0 -1)"><path class="lp-em-fill" style="--d:0.3s" pathLength="1" d="M3.3 12.6V7.6c0-1.1.7-1.8 1.7-1.8.6 0 .9.4 1.1.4s.5-.4 1.1-.4c1 0 1.7.7 1.7 1.8v5z"/><path class="lp-em-fill" style="--d:0.45s" pathLength="1" d="M15.1 12.6V7.6c0-1.1.7-1.8 1.7-1.8.6 0 .9.4 1.1.4s.5-.4 1.1-.4c1 0 1.7.7 1.7 1.8v5z"/><path class="lp-em-fill" style="--d:0.9s;--fill-to:0.34" pathLength="1" d="M9.2 12.6V7.6c0-1.1.7-1.8 1.7-1.8.6 0 .9.4 1.1.4s.5-.4 1.1-.4c1 0 1.7.7 1.7 1.8v5z"/><path style="--d:1.2s" pathLength="1" d="M4.1 12.6c.2 3 .6 5.6 1.4 7.3.3.6.9.6 1.2 0 .8-1.7 1.2-4.3 1.4-7.3"/><path style="--d:1.3s" pathLength="1" d="M15.9 12.6c.2 3 .6 5.6 1.4 7.3.3.6.9.6 1.2 0 .8-1.7 1.2-4.3 1.4-7.3"/><path class="lp-em-soft" style="--d:1.6s" pathLength="1" d="M2 13.3c1.7-.7 3.3-.7 5 0s3.3.7 5 0 3.3-.7 5 0 3.3.7 5 0"/></g></svg>
+    </div>
+  </div>
+</section>
+
+
+<!-- SADRŽAJ -->
+<section class="lp-main">
+  <div class="container lp-layout">
+
+    <article class="lp-article">
+      <p class="lp-intro">Der Zahnersatz umfasst alle Arten von zahnmedizinischen Versorgungen, die in Zusammenarbeit mit einem Zahntechniker individuell angefertigt werden.</p>
+
+      <h2>Festsitzend, herausnehmbar <em>oder kombiniert</em></h2>
+      <p>Grundsätzlich unterscheidet man zwischen festsitzendem, herausnehmbarem und kombiniertem Zahnersatz. Der Unterschied liegt darin, ob die Versorgung dauerhaft im Mund befestigt bzw. zementiert wird oder vom Patienten selbstständig herausgenommen werden kann.</p>
+      <div class="lp-points stagger">
+        <div class="lp-point">
+          <div class="lp-point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+          <h3>Festsitzend</h3>
+          <p>Wird dauerhaft im Mund befestigt bzw. zementiert.</p>
+        </div>
+        <div class="lp-point">
+          <div class="lp-point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/><path d="M12 15V4M8 8l4-4 4 4"/></svg></div>
+          <h3>Herausnehmbar</h3>
+          <p>Kann vom Patienten selbstständig herausgenommen werden.</p>
+        </div>
+        <div class="lp-point">
+          <div class="lp-point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="5.5"/><circle cx="15" cy="12" r="5.5"/></svg></div>
+          <h3>Kombiniert</h3>
+          <p>Verbindet festsitzende und herausnehmbare Elemente.</p>
+        </div>
+      </div>
+
+      <h2>Welche Versorgung <em>passt zu Ihnen?</em></h2>
+      <p>Zu den wichtigsten Formen des Zahnersatzes zählen Veneers, Kronen, Brücken und Prothesen. Welche Versorgungsform für den jeweiligen Patienten am besten geeignet ist, hängt von verschiedenen Faktoren ab. Dazu zählen die Ergebnisse der <a href="../radiologische-diagnostik/">diagnostischen Untersuchungen</a>, der klinische Befund, die Position und der Zustand der vorhandenen Zähne sowie die allgemeine Situation im Mund.</p>
+      <p>Selbstverständlich berücksichtigen wir auch die individuellen Wünsche und Vorstellungen unserer Patienten.</p>
+      <figure class="lp-figure reveal">
+        <img src="../images/fotoshooting/zahnersatz-beratung-1500.webp" srcset="../images/fotoshooting/zahnersatz-beratung-800.webp 800w, ../images/fotoshooting/zahnersatz-beratung-1500.webp 1500w" sizes="(max-width: 1100px) 92vw, 736px" alt="Dr. Kristina Havaic Zlibanovic in der Praxis Zahnaesthetika" width="1500" height="938" loading="lazy" />
+        <figcaption>Persönliche Beratung in unserer Ordination in Salzburg-Nonntal.</figcaption>
+      </figure>
+
+      <div class="lp-duo stagger">
+        <section class="lp-duo-card" id="veneers" aria-labelledby="veneers-titel">
+          <div class="lp-point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><path d="M12 3l1.8 4.7 4.7 1.8-4.7 1.8L12 16l-1.8-4.7-4.7-1.8 4.7-1.8z"/><path d="M18.5 15l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg></div>
+          <h2 id="veneers-titel">Veneers –<br /><em>Form und Farbe</em></h2>
+          <p>Veneers sind hauchdünne keramische Verblendschalen, für deren Anbringung nur ein minimaler Abtrag der natürlichen Zahnsubstanz erforderlich ist. Sie dienen vor allem der <a href="../aesthetische-zahnmedizin/">ästhetischen Korrektur</a> von Zahnfarbe und Zahnform und ermöglichen ein harmonisches, natürliches Erscheinungsbild.</p>
+        </section>
+        <section class="lp-duo-card" id="kronen" aria-labelledby="kronen-titel">
+          <div class="lp-point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><path d="M5 9.5C5 7 6.5 5.5 8.5 5.5c1.4 0 2.2.9 3.5.9s2.1-.9 3.5-.9c2 0 3.5 1.5 3.5 4V14H5z"/><path d="M7.5 14v2c0 2.3.9 4.5 1.9 4.5 1.2 0 1.3-2.6 2.6-2.6s1.4 2.6 2.6 2.6c1 0 1.9-2.2 1.9-4.5v-2"/></svg></div>
+          <h2 id="kronen-titel">Zahnkronen –<br /><em>Stabilität und Funktion</em></h2>
+          <p>Zahnkronen sind festsitzende prothetische Versorgungen, die vor allem dann empfohlen werden, wenn bereits ein großer Teil der natürlichen Zahnsubstanz verloren gegangen ist. Sie umschließen den betroffenen Zahn und stellen seine Form, Stabilität und Funktion wieder her.</p>
+        </section>
+        <section class="lp-duo-card" id="bruecken" aria-labelledby="bruecken-titel">
+          <div class="lp-point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><rect x="2.5" y="7" width="19" height="10" rx="3"/><path d="M8.8 7v10M15.2 7v10"/></svg></div>
+          <h2 id="bruecken-titel">Zahnbrücken –<br /><em>Lücken schließen</em></h2>
+          <p>Zahnbrücken dienen dazu, eine oder mehrere Zahnlücken zu schließen. Bei einer klassischen Brückenversorgung werden die benachbarten Zähne beschliffen und als Pfeiler für den Zahnersatz verwendet.</p>
+          <p>Sind die Nachbarzähne vollkommen gesund und weitgehend unversehrt, empfehlen wir häufig eine <a href="../implantologie/">Implantatversorgung</a> als Alternative, um die natürliche Zahnsubstanz der Nachbarzähne zu erhalten.</p>
+        </section>
+        <section class="lp-duo-card" id="prothesen" aria-labelledby="prothesen-titel">
+          <div class="lp-point-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><path d="M4.5 5c0 8.5 3 14.5 7.5 14.5S19.5 13.5 19.5 5"/><path d="M8.2 5.5c0 6 1.5 9.8 3.8 9.8s3.8-3.8 3.8-9.8"/></svg></div>
+          <h2 id="prothesen-titel">Zahnprothesen –<br /><em>Teil- oder Totalprothese</em></h2>
+          <p>Zahnprothesen können als Teilprothesen oder Totalprothesen angefertigt werden. Teilprothesen kommen zum Einsatz, wenn noch eigene Zähne vorhanden sind, die als zusätzliche Stütze und Verankerung dienen können.</p>
+          <p>Totalprothesen ersetzen hingegen nicht nur die fehlenden Zähne, sondern auch das verloren gegangene Knochen- und Weichgewebe und stellen somit die natürliche Kontur des Kiefers und das Gesichtsprofil teilweise wieder her.</p>
+        </section>
+      </div>
+
+      <blockquote class="lp-quote">
+        <p>Unser Ziel ist es, für jeden Patienten eine individuell abgestimmte Lösung zu finden, die sowohl funktionellen als auch ästhetischen Ansprüchen gerecht wird.</p>
+      </blockquote>
+    </article>
+
+    <aside class="lp-aside" aria-label="Termin vereinbaren">
+      <div class="lp-aside-card">
+        <p class="eyebrow">Terminbuchung</p>
+        <p class="lp-aside-title">Termin vereinbaren</p>
+        <p class="lp-aside-text">Online rund um die Uhr oder telefonisch während unserer Öffnungszeiten.</p>
+        <a href="https://termine.softdent.at/zahnaesthetika" target="_blank" rel="noopener" class="btn-primary" aria-label="Online Termin buchen (öffnet in neuem Tab)">Online Termin buchen <svg class="tb-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <a href="tel:+436606341421" class="lp-aside-tel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg> +43&nbsp;660&nbsp;634&nbsp;1421</a>
+        <dl class="lp-aside-hours">
+          <div><dt>Mo &amp; Mi</dt><dd>14:30 – 19:30</dd></div>
+          <div><dt>Di, Do &amp; Fr</dt><dd>08:00 – 14:00</dd></div>
+          <div><dt>Sa &amp; So</dt><dd>Geschlossen</dd></div>
+        </dl>
+        <p class="lp-aside-addr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Nonntaler Hauptstraße 49, 5020 Salzburg</p>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+
+<!-- TERMIN -->
+<section class="lp-cta" id="termin">
+  <div class="container reveal">
+    <p class="eyebrow">Terminbuchung</p>
+    <h2>Persönliche Beratung zum <em>Zahnersatz</em></h2>
+    <p>Sie benötigen einen Zahnersatz oder möchten sich über die verschiedenen Möglichkeiten informieren? Kontaktieren Sie uns gerne! Wir beraten Sie persönlich und finden gemeinsam mit Ihnen eine passende Lösung für Ihre individuelle Situation.</p>
+    <div class="hero-btns">
+      <a href="https://termine.softdent.at/zahnaesthetika" target="_blank" rel="noopener" class="btn-primary tb-cta" aria-label="Jetzt online Termin buchen (öffnet in neuem Tab)">
+        Jetzt online Termin buchen
+        <svg class="tb-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
+      <a href="tel:+436606341421" class="btn-outline"><svg class="lp-tel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg> +43&nbsp;660&nbsp;634&nbsp;1421</a>
+    </div>
+    <p class="lp-cta-addr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Zahnaesthetika · Nonntaler Hauptstraße 49, 5020 Salzburg</p>
+  </div>
+</section>
+
+
+<!-- WEITERE LEISTUNGEN -->
+<section class="lp-more">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="eyebrow">Leistungen</p>
+      <h2>Weitere <em>Leistungen</em></h2>
+    </div>
+    <div class="lp-more-grid stagger">
+      <a href="../implantologie/" class="service-card service-card--link">
+        <span class="service-icon-wrap"><svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg></span>
+        <h3>Implantologie &amp; Chirurgie</h3>
+        <p>Zahnimplantate als Ersatz für fehlende Zähne sowie zahnärztliche Chirurgie.</p>
+        <span class="service-more">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="service-corner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </a>
+      <a href="../aesthetische-zahnmedizin/" class="service-card service-card--link">
+        <span class="service-icon-wrap"><svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+        <h3>Ästhetische Zahnmedizin</h3>
+        <p>Veneers, Zahnaufhellung und ästhetische Behandlungen nach individueller Planung.</p>
+        <span class="service-more">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="service-corner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </a>
+      <a href="../konservierende-zahnmedizin/" class="service-card service-card--link">
+        <span class="service-icon-wrap"><svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+        <h3>Konservierende Zahnmedizin</h3>
+        <p>Schonende Behandlung von Karies und ästhetisch hochwertige Füllungen zum Erhalt Ihrer natürlichen Zähne.</p>
+        <span class="service-more">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="service-corner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </a>
+      <a href="../wurzelkanalbehandlung/" class="service-card service-card--link">
+        <span class="service-icon-wrap"><svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></span>
+        <h3>Wurzelkanalbehandlung</h3>
+        <p>Endodontie unter örtlicher Betäubung zum Erhalt Ihrer natürlichen Zähne.</p>
+        <span class="service-more">Mehr erfahren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="service-corner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+      </a>
+    </div>
+    <p class="lp-more-all"><a href="../#leistungen" class="lp-link-arrow">Alle Leistungen ansehen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+  </div>
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="../" class="logo logo--light">
+          <img src="../images/logo/svg2.svg" alt="" class="logo-svg" aria-hidden="true" />
+          <span class="logo-text"><span class="logo-initial">Z</span>ahnaesthetika</span>
+        </a>
+        <p>Ihre moderne Zahnarztpraxis in Salzburg, wo Zahnmedizin auf Kunst trifft. Unser Ziel: Ihr Lächeln in guten Händen.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/zahnaesthetika" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61593370141613" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li>Nonntaler Hauptstraße 49</li>
+          <li>5020 Salzburg, Österreich</li>
+          <li>Tel: <a href="tel:+436606341421">+43&nbsp;660&nbsp;634&nbsp;1421</a></li>
+          <li>E-Mail: info@zahnaesthetika.at</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="../#datenschutz">Datenschutzerklärung</a></li>
+          <li><a href="../#impressum">Impressum</a></li>
+          <li><a href="../#cookie">Cookie-Richtlinie</a></li>
+          <li><a href="#" class="cookie-settings">Cookie-Einstellungen</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div>&#169; <span id="year"></span> Zahnordination Zahnaesthetika. Alle Rechte vorbehalten.</div>
+      <div>Nonntaler Hauptstraße 49, 5020 Salzburg, Österreich</div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- SCROLL TO TOP -->
+<button id="scroll-top" aria-label="Zurück nach oben">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" role="dialog" aria-label="Cookie-Hinweis">
+  <p>
+    Mit Ihrer Einwilligung nutzen wir Google Analytics und Google Ads, um die Nutzung unserer Website zu analysieren und unsere Werbung zu messen und zu verbessern. Dabei werden Daten an Google übertragen. Ihre Auswahl können Sie jederzeit unter „Cookie&#8209;Einstellungen“ ändern.
+    Mehr in unserer <a href="../#datenschutz">Datenschutzerklärung</a>.
+  </p>
+  <div class="cookie-btns">
+    <button class="cookie-accept" id="cookie-accept">Alle akzeptieren</button>
+    <button class="cookie-reject" id="cookie-reject">Nur notwendige</button>
+  </div>
+</div>
+
+
+<script src="../script.js"></script>
+</body>
+</html>
